@@ -9,3 +9,4 @@ fi
 alias g='gvim --remote-silent'
 alias shutdown='sudo shutdown now'
 alias restart='sudo shutdown -r now'
+alias gdb = 'gdb --tui'
