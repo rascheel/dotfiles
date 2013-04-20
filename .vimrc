@@ -27,7 +27,7 @@ set wildmenu
 "Creates a light red highlight at the 80 char column
 if exists('+colorcolumn')
     set colorcolumn=80
-else
+elseif exists('matchadd')
     au BufWinEnter * let w:m2=matchadd('Errormsg', '\%>80v.\+', -1)
 endif
 
