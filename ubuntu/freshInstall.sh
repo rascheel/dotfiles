@@ -9,3 +9,5 @@ sudo apt-get -y update
 sudo apt-get -y install google-chrome-stable
 
 sudo apt-get -y install vim-gnome vim
+
+sudo apt-get -y install xclip
