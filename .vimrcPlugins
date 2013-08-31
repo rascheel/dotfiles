@@ -1,0 +1,51 @@
+
+set nocompatible               " be iMproved
+filetype off                   " required for vundle
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/taglist.vim'
+
+"""KEPT AS REFERENCE
+" vim-scripts repos
+"Bundle 'L9'
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (ie. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+""""END REFERENCE
+
+filetype plugin indent on     " required for vundle
+syntax on
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+
+let tlist_python_settings = 'python;v:variables;c:class;m:member;f:function'
+
+let Tlist_Exit_OnlyWindow = 1 "if taglist window is the only window left, exit vim
+let Tlist_Process_File_Always = 1 "even without taglist window, create tags file, required for displaying tag in statusline
+let Tlist_Use_Right_Window = 1 "display taglist window on the right
+nnoremap <F8> :TlistSessionSave H:\taglists\
+nnoremap <F9> :TlistSessionLoad H:\taglists\
+nnoremap <F5> :TlistToggle
+nnoremap <F6> :TlistOpen
+

@@ -1,3 +1,10 @@
+
+if has("win32") || has("win64")
+    set directory=$TMP
+else
+    set directory=/tmp
+end
+
 "Current prefered color scheme, need to try more out.
 colorscheme desert
 
@@ -53,8 +60,19 @@ set go-=r
 set go-=L
 set go-=T
 
+"Start vim with no wrapping lines that extend past the edge.
+set nowrap
+
 "This sets folding to automatic based on language syntax.
 set foldmethod=syntax 
+set foldcolumn=1
+"Disable folding of c block comments
+let c_no_comment_fold = 1
+
+
+"Allows me to switch between relative line numbering and absolute by pushing F2
+nnoremap <F2> :set nu!<CR>
+nnoremap <F3> :set rnu!<CR>
 
 "Because I am using automatic folding, upon entering a curly brace in insert
 "mode vim unfolds everything below that curly brace. These autocmds fix that
