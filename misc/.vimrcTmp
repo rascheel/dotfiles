@@ -1,0 +1,139 @@
+
+if has("win32") || has("win64")
+    set directory=$TMP
+else
+    set directory=/tmp
+end
+
+set backspace=2
+
+"Current prefered color scheme, need to try more out.
+colorscheme desert
+
+"Automatically handles C indentation
+set cindent
+
+"Sets tab size to 4 spaces and replaces all entered tabs with spaces
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+"Adds a $ symbol when using the 'c' command, to the end of the code that will 
+"be changed. Really nice
+set cpoptions+=$
+
+"Allows the cursor to go anywhere in the window, not a fan of this
+"set virtualedit=all 
+
+"Allows auto complete in the command line
+set wildmenu
+
+"highlights background in a subtle red text for any text that goes past the 80
+"column. Also not working.
+"highlight Overlength ctermbg=red ctermfg=white guibg=#592929
+"match Overlength /\%81v.\+/
+
+"Creates a light red highlight at the 80 char column
+if exists('+colorcolumn')
+    set colorcolumn=80
+elseif exists('matchadd')
+    au BufWinEnter * let w:m2=matchadd('Errormsg', '\%>80v.\+', -1)
+endif
+
+"shows line numbers on the left side
+set number numberwidth=2
+
+"ignores case in search terms unless upper case is specifically included
+set ignorecase
+set smartcase
+
+"disables the arrow keys in normal mode
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+"enables the visual bell which shuts off the beeping
+set visualbell
+
+"removes menus from gvim
+set go-=m
+set go-=r
+set go-=L
+set go-=T
+
+"Start vim with no wrapping lines that extend past the edge.
+set nowrap
+
+"This sets folding to automatic based on language syntax.
+set foldmethod=syntax 
+set foldcolumn=1
+"Disable folding of c block comments
+let c_no_comment_fold = 1
+
+
+"Allows me to switch between relative line numbering and absolute by pushing F2
+nnoremap <F2> :set nu!<CR>
+nnoremap <F3> :set rnu!<CR>
+
+"Because I am using automatic folding, upon entering a curly brace in insert
+"mode vim unfolds everything below that curly brace. These autocmds fix that
+"by switching me to manual folding upon entering insert mode, and then
+"returning me to syntax folding when leaving insert mode.
+autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
+set nocompatible               " be iMproved
+filetype off                   " required for vundle
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'scrooloose/syntastic'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'flazz/vim-colorschemes'
+
+"""KEPT AS REFERENCE
+" vim-scripts repos
+"Bundle 'L9'
+" non github repos
+"Bundle 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (ie. when working on your own plugin)
+"Bundle 'file:///Users/gmarik/path/to/plugin'
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed..
+""""END REFERENCE
+
+filetype plugin indent on     " required for vundle
+syntax on
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+
+let tlist_python_settings = 'python;v:variables;c:class;m:member;f:function'
+
+let Tlist_Exit_OnlyWindow = 1 "if taglist window is the only window left, exit vim
+let Tlist_Process_File_Always = 1 "even without taglist window, create tags file, required for displaying tag in statusline
+let Tlist_Use_Right_Window = 1 "display taglist window on the right
+nnoremap <F8> :TlistSessionSave H:\taglists\
+nnoremap <F9> :TlistSessionLoad H:\taglists\
+nnoremap <F5> :TlistToggle
+nnoremap <F6> :TlistOpen
+
+let g:EclimCompletionMethod = 'omnifunc'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+colorscheme wombat
