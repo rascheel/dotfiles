@@ -1,2 +1,2 @@
-cp .vimrc ~/
-cp .bashrc ~/
+mkdir -p ~/.config/nvim
+cp ~/git/dotfiles/init.vim ~/.config/nvim/
