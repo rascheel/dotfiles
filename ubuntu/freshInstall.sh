@@ -9,6 +9,8 @@ sudo apt-get -y install xclip
 
 sudo apt-get -y install exuberant-ctags
 
+sudo apt-get -y install tmux tmuxinator
+
 # Neovim python dependencies
 sudo apt-get -y install python3-pip
 python3 -m pip install --user --upgrade pynvim
