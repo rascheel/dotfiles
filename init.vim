@@ -143,7 +143,7 @@ let g:airline_section_y = '%{strftime("%c")}'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 syntax on                                       " Syntax highlighting
 syntax enable
-set spell spelllang=en_us                       " set english as standard language
+"set spell spelllang=en_us                       " set english as standard language
 
 set t_Co=256                                    " 256 colors for terminal
 
