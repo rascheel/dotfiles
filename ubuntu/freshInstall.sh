@@ -11,6 +11,9 @@ sudo apt-get -y install exuberant-ctags
 
 sudo apt-get -y install tmux tmuxinator
 
+#Install ripgrep because its rip-diculously faster than grep
+sudo apt-get -y install ripgrep
+
 # Neovim python dependencies
 sudo apt-get -y install python3-pip
 python3 -m pip install --user --upgrade pynvim
