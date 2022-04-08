@@ -2,6 +2,9 @@
 mkdir -p ~/.config/nvim
 ln -s ~/git/dotfiles/init.vim ~/.config/nvim/init.vim
 
+# Setup tmux config
+ln -s ~/git/dotfiles/tmux.conf ~/.tmux.conf
+
 # Install neovim plugins
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
