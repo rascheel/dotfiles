@@ -22,3 +22,7 @@ unset use_domain        # because joe@localhost is just embarrassing
 set realname = "Ryan Scheel"
 set from = "scheel.ryan@gmail.com"
 set use_from = yes
+
+# Sort 
+set sort_aux = last-date-received
+#set sort = reverse-threads

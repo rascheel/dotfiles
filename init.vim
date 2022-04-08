@@ -52,8 +52,8 @@ Plug 'sirVer/ultisnips'
                         " Navigate
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/taglist.vim'
+Plug 'preservim/tagbar'
+"Plug 'vim-scripts/taglist.vim'
 "Plug 'mhinz/vim-grepper'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 "Plug 'xuyuanp/nerdtree-git-plugin'

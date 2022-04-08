@@ -1,21 +1,45 @@
-# Setup a fresh Ubuntu 20.04 install
+### Setup a fresh Ubuntu 22.04 install ###
+### APT Packages ###
+sudo apt -y update
+sudo apt -y upgrade
 
-sudo apt-get -y update
-sudo apt-get -y upgrade
-
-sudo apt-get -y install build-essential
-
-sudo apt-get -y install xclip
+PACKAGES="build-essential"
+PACKAGES+=" xclip"
 
 # Tools I like
-sudo apt-get -y install tmux tmuxinator tree exuberant-ctags ripgrep
+PACKAGES+=" tmux tmuxinator tree exuberant-ctags ripgrep curl htop steam gimp gimp-plugin-registry"
 
+# Install build dependencies
+PACKAGES+=" libncurses5-dev gcc make git exuberant-ctags bc libssl-dev"
+
+# Documentation tools
+PACKAGES+=" sphinxsearch python3-docutils python3-sphinx python3-sphinx-rtd-theme graphviz imagemagick texlive-latex-recommended texlive-base"
+
+# Pygame for fun
+PACKAGES+=" python3-pygame"
+
+# Install packages
+sudo apt -y install $PACKAGES
+
+### Install Snaps I use ###
+SNAPS="signal-desktop discord spotify"
+sudo snap install $SNAPS
+
+### SETUP NEOVIM ###
 # Neovim python dependencies
-sudo apt-get -y install python3-pip
-python3 -m pip install --user --upgrade pynvim
+NVIM_PACKAGES=" python3-pip"
 
 # Neovim powerline fonts
-sudo apt-get -y install fonts-powerline
+NVIM_PACKAGES+=" fonts-powerline"
+
+# nvim build dependencies
+NVIM_PACKAGES+=" ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip"
+
+# Install nvim packages
+sudo apt -y install $NVIM_PACKAGES
+
+# Neovim python dependencies
+python3 -m pip install --user --upgrade pynvim
 
 # Neovim build/installation
 mkdir -p ~/git
@@ -23,12 +47,5 @@ cd ~/git
 git clone https://github.com/neovim/neovim.git
 cd neovim
 git checkout stable
-sudo apt-get -y install ninja-build gettext libtool libtool-bin autoconf automake cmake g++ pkg-config unzip
 make CMAKE_BUILD_TYPE=Release
 sudo make install
-
-# Install build dependencies
-sudo apt-get -y install libncurses5-dev gcc make git exuberant-ctags bc libssl-dev
-
-# Documentation tools
-sudo apt-get -y install sphinxsearch python3-docutils python3-sphinx python3-sphinx-rtd-theme graphviz imagemagick texlive-latex-recommended texlive-base 
