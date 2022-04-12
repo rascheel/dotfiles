@@ -22,7 +22,7 @@ PACKAGES+=" python3-pygame"
 sudo apt -y install $PACKAGES
 
 ### Install Snaps I use ###
-SNAPS="signal-desktop discord spotify"
+SNAPS="signal-desktop discord spotify vlc"
 sudo snap install $SNAPS
 
 ### SETUP NEOVIM ###
