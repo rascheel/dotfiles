@@ -7,7 +7,7 @@ PACKAGES="build-essential"
 PACKAGES+=" xclip"
 
 # Tools I like
-PACKAGES+=" tmux tmuxinator tree exuberant-ctags ripgrep curl htop steam gimp gimp-plugin-registry gnome-clocks"
+PACKAGES+=" tmux tmuxinator tree exuberant-ctags ripgrep curl htop steam gimp gimp-plugin-registry gnome-clocks openvpn p7zip-full"
 
 # Install build dependencies
 PACKAGES+=" libncurses5-dev gcc make git exuberant-ctags bc libssl-dev"
