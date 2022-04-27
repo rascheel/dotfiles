@@ -1,9 +1,9 @@
 # Setup vim config
 mkdir -p ~/.config/nvim
-ln -s ~/git/dotfiles/init.vim ~/.config/nvim/init.vim
+ln -s ~/git/personal/dotfiles/init.vim ~/.config/nvim/init.vim
 
 # Setup tmux config
-ln -s ~/git/dotfiles/tmux.conf ~/.tmux.conf
+ln -s ~/git/personal/dotfiles/tmux.conf ~/.tmux.conf
 git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
 
 # Install neovim plugins
@@ -12,5 +12,5 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 nvim +PlugInstall +qall
 
 # Add aliases
-tee --append ~/.bashrc < ~/git/dotfiles/alias
+tee --append ~/.bashrc < ~/git/personal/dotfiles/alias
 echo ".bashrc modified, restart terminal (or source .bashrc)"

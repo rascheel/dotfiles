@@ -1,0 +1,5 @@
+[user]
+	name = Ryan Scheel
+	email = ryan.scheel@timesys.com
+[core]
+	sshCommand = ssh -i ~/.ssh/id_rsa_work

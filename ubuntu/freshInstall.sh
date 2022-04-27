@@ -48,8 +48,8 @@ sudo apt -y install $NVIM_PACKAGES
 python3 -m pip install --user --upgrade pynvim
 
 # Neovim build/installation
-mkdir -p ~/git
-cd ~/git
+mkdir -p ~/git/personal/neovim
+cd ~/git/personal
 git clone https://github.com/neovim/neovim.git
 cd neovim
 git checkout stable

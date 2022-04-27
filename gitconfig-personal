@@ -1,0 +1,5 @@
+[user]
+	name = Ryan Scheel
+	email = scheel.ryan@gmail.com
+[core]
+	sshCommand = ssh -i ~/.ssh/id_rsa_personal

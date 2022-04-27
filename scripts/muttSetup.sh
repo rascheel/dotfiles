@@ -7,7 +7,7 @@ mkdir ~/.mutt/cache/bodies
 touch ~/.mutt/certificates
 
 ## Copy config file for mutt
-cp ~/git/dotfiles/muttrc ~/.mutt/
+cp ~/git/personal/dotfiles/muttrc ~/.mutt/
 
 # Things that would be dumb to put in a repo
 echo "--------Go set your password-------"
