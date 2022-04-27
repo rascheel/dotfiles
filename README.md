@@ -6,8 +6,9 @@ Repo to hold all my linux settings.
 Download this repo and setup git
 ```bash
 sudo apt install git
-mkdir -p ~/git
-git clone https://github.com/rascheel/dotfiles.git ~/git/dotfiles
+mkdir -p ~/git/personal
+git clone https://github.com/rascheel/dotfiles.git ~/git/personal/dotfiles
+cd ~/git/personal/dotfiles
 ./scripts/gitSetup.sh
 ```
 
