@@ -38,6 +38,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
 "Plug 'illyastarikov/skeleton-files'
 "Plug 'justinmk/vim-syntax-extra'
+Plug 'kergoth/vim-bitbake'
 
                         " Write Code
 Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }

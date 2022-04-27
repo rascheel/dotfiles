@@ -7,10 +7,16 @@ PACKAGES="build-essential"
 PACKAGES+=" xclip"
 
 # Tools I like
-PACKAGES+=" tmux tmuxinator tree exuberant-ctags ripgrep curl htop steam gimp gimp-plugin-registry gnome-clocks openvpn p7zip-full"
+PACKAGES+=" tmux tmuxinator tree exuberant-ctags ripgrep curl htop steam gimp gimp-plugin-registry gnome-clocks openvpn p7zip-full meld picocom"
 
 # Install build dependencies
 PACKAGES+=" libncurses5-dev gcc make git exuberant-ctags bc libssl-dev"
+
+# Install bitbake dependencies
+PACKAGES+=" chrpath diffstat gawk liblz4-tool"
+
+# Install work repos
+PACKAGES+=" repo bmap-tools minicom"
 
 # Documentation tools
 PACKAGES+=" sphinxsearch python3-docutils python3-sphinx python3-sphinx-rtd-theme graphviz imagemagick texlive-latex-recommended texlive-base"
