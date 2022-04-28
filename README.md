@@ -5,7 +5,7 @@ Repo to hold all my linux settings.
 
 Download this repo and setup git
 ```bash
-sudo apt install git
+sudo apt install git xclip
 mkdir -p ~/git/personal
 git clone https://github.com/rascheel/dotfiles.git ~/git/personal/dotfiles
 cd ~/git/personal/dotfiles
