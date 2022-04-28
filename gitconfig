@@ -4,3 +4,5 @@
 	path = ~/git/personal/.gitconfig
 [core]
 	editor = nvim
+[color]
+	ui = auto
