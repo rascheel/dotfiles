@@ -27,6 +27,9 @@ PACKAGES+=" sphinxsearch python3-docutils python3-sphinx python3-sphinx-rtd-them
 # Pygame for fun
 PACKAGES+=" python3-pygame"
 
+# Required for background switcher script
+PACKAGES+=" libglib2.0-dev-bin"
+
 # Install packages
 sudo apt -y install $PACKAGES
 
