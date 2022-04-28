@@ -15,6 +15,9 @@ PACKAGES+=" libncurses5-dev gcc make git exuberant-ctags bc libssl-dev"
 # Install bitbake dependencies
 PACKAGES+=" chrpath diffstat gawk liblz4-tool"
 
+# Install appimage dependencies
+PACKAGES+=" fuse libfuse2"
+
 # Install work repos
 PACKAGES+=" repo bmap-tools minicom"
 
