@@ -6,8 +6,12 @@ alias vi="nvim"
 export EDITOR=nvim
 
 # Get color when searching and piping to less
+alias grep="rg --color=always"
 alias rg="rg --color=always"
 alias less="less -R"
 
 # Get the weather forecast in the terminal
 alias weather="curl wttr.in"
+
+# Make the shell cd to wherever I traveled to with ranger
+alias ranger=". ranger"

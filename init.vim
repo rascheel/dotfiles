@@ -57,7 +57,7 @@ Plug 'preservim/tagbar'
 "Plug 'vim-scripts/taglist.vim'
 "Plug 'mhinz/vim-grepper'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-"Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 
@@ -99,6 +99,7 @@ endif
 
 set ignorecase                  " Ignores case in search terms unless upper case is specifically included
 set smartcase
+set nowrapscan                  " Prevent search from wrapping around the file by default
 
 set foldmethod=syntax                   " This sets folding to automatic based on language syntax.
 set foldcolumn=0
