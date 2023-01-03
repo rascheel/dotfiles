@@ -72,7 +72,8 @@ set virtualedit=all                             " freedom of movement
 
 set nowrap                  " Start vim with no wrapping lines that extend past the edge.
 
-set expandtab                                   " Replace tabs with spaces
+" set expandtab                                   " Replace tabs with spaces
+set noexpandtab                                 " Insert tabs instead of spaces
 set shiftwidth=4                                " set number of spaces to 4
 set tabstop=4                                   " 4 spaces per tab
 

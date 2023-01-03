@@ -15,3 +15,6 @@ alias weather="curl wttr.in"
 
 # Make the shell cd to wherever I traveled to with ranger
 alias ranger=". ranger"
+
+# Make an alias I can pipe stuff to to get it into the clipboard
+alias clipboard="xclip -sel clipboard"

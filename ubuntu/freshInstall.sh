@@ -7,7 +7,7 @@ PACKAGES="build-essential"
 PACKAGES+=" xclip"
 
 # Tools I like
-PACKAGES+=" tmux tmuxinator tree exuberant-ctags ripgrep curl htop steam gimp gimp-plugin-registry gnome-clocks openvpn p7zip-full meld picocom curl chrome-gnome-shell gnome-shell-pomodoro ranger s-tui"
+PACKAGES+=" tmux tmuxinator tree exuberant-ctags ripgrep curl htop steam gimp gimp-plugin-registry gnome-clocks openvpn p7zip-full meld picocom curl chrome-gnome-shell gnome-shell-pomodoro ranger s-tui gparted"
 
 # Install build dependencies
 PACKAGES+=" libncurses5-dev gcc make git exuberant-ctags bc libssl-dev bison flex"
@@ -64,3 +64,6 @@ cd neovim
 git checkout stable
 make CMAKE_BUILD_TYPE=Release
 sudo make install
+
+# Disable lockscreen notifications (I think this is waking up my monitor when it is supposed to be suspended)
+gsettings set org.gnome.desktop.notifications show-in-lock-screen false
