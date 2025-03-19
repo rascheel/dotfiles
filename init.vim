@@ -41,8 +41,12 @@ Plug 'deoplete-plugins/deoplete-jedi', { 'for': 'python' }
 Plug 'kergoth/vim-bitbake'
 
                         " Write Code
-Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'sirVer/ultisnips'
+if has('win32') || has("win64")
+	echo "TODO"
+else
+	Plug 'shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'sirVer/ultisnips'
+endif
 "Plug 'skywind3000/asyncrun.vim'
 "Plug 'tommcdo/vim-lion'
 "Plug 'tpope/vim-commentary'
@@ -126,7 +130,7 @@ set cpoptions+=$ "Adds a $ symbol when using the 'c' command, to the end of the 
 
 " vim-indent-guides settings
 let g:indent_guides_guide_size=1
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0 " Disable indent guides on startup, enable with F4
 
 " Powerline settings to look good
 set laststatus=2
@@ -161,7 +165,7 @@ set novisualbell                                " or error visuals
 set t_vb=
 
 " Tells vim to display tab characters as little arrows and trailing spaces as floating dots
-set list
+"set list
 set listchars=tab:▷⋅,trail:⋅
 "set list                                        " Show spaces, line breaks, the like
 "set showbreak=↪\
@@ -170,6 +174,11 @@ set listchars=tab:▷⋅,trail:⋅
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 4. PLUGIN TODO
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" use Ag/Rg for grep if available
+if executable('rg') | set gp=rg\ --vimgrep\ --no-heading gfm=%f:%l:%c:%m,%f:%l%m,%f\ \ %l%m|
+elseif executable('ag') | set gp=ag\ --nogroup\ --nocolor | endif
+com! -nargs=+ -complete=file -bar Rg sil! gr! <args>|cw|redr!|let @/="<args>"|set hls
+com! -nargs=+ -complete=file -bar Ag sil! gr! <args>|cw|redr!|let @/="<args>"|set hls
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => 5. Airline

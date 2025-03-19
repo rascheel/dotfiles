@@ -8,7 +8,37 @@
 	path = ~/git/personal/.gitconfig
 [core]
 	editor = nvim
+	excludesfile = /home/scheel/.gitignore
 [color]
 	ui = auto
 [url "https://github.com/"]
 	insteadOf = git://github.com/
+
+# Difftool settings
+[diff]
+	tool = meld
+	guitool = meld
+[difftool]
+	prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+
+# Mergetool settings
+[merge]
+	tool = meld
+[mergetool "meld"]
+	# Choose one of these 2 "cmd" lines depending on what I want.
+	# Always edit middle pane.
+	# $MERGED variation starts editing with git's best merge attempt
+	# $BASE variation starts editing with the common ancestor file
+	#     before $LOCAL and $REMOTE changes were attempted
+	#
+	#cmd = meld "$LOCAL" "$MERGED" "$REMOTE" --output "$MERGED"
+	cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[alias]
+	graph = log --all --decorate --oneline --graph
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f

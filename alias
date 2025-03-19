@@ -9,6 +9,7 @@ export EDITOR=nvim
 alias grep="rg --color=always"
 alias rg="rg --color=always"
 alias less="less -R"
+alias tree="tree -C"
 
 # Get the weather forecast in the terminal
 alias weather="curl wttr.in"
@@ -18,3 +19,12 @@ alias ranger=". ranger"
 
 # Make an alias I can pipe stuff to to get it into the clipboard
 alias clipboard="xclip -sel clipboard"
+
+# Make an alias to return to current directory. Useful in the yocto build directory when
+# in a directory that gets deleted.
+alias cdp='cd $(pwd)'
+
+# Make a command to print log files with color, nice to print make file output
+logcat() {
+	cat $1 | ccze -A | less -R
+}
