@@ -14,3 +14,14 @@ nvim +PlugInstall +qall
 # Add aliases
 tee --append ~/.bashrc < ~/git/personal/dotfiles/alias
 echo ".bashrc modified, restart terminal (or source .bashrc)"
+
+# Add fish config to dotfiles repo
+rm -f ~/.config/fish/config.fish
+mkdir -p ~/.config/fish/
+ln -s ~/git/personal/dotfiles/config.fish ~/.config/fish/config.fish
+
+# Make fish default shell
+chsh -s /usr/bin/fish
+
+# Echo warning about neovim
+echo "WARNING: There is a bug in powerfonts with the default terminal font Ubuntu Mono Sans. Change terminal font settings to Ubuntu Mono. https://github.com/powerline/powerline/issues/2264"
