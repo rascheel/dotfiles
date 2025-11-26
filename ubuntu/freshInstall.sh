@@ -19,9 +19,6 @@ PACKAGES+=" libncurses5-dev gcc make git exuberant-ctags bc libssl-dev bison fle
 # Install bitbake dependencies
 PACKAGES+=" zstd gawk wget git-core diffstat unzip texinfo gcc-multilib build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping libsdl1.2-dev xterm"
 
-# Install appimage dependencies
-PACKAGES+=" fuse libfuse2"
-
 # Install work repos
 PACKAGES+=" bmap-tools minicom device-tree-compiler pidgin isc-dhcp-server libusb-1.0-0-dev wine64 filezilla"
 
